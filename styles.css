@@ -1,0 +1,193 @@
+/* Ogólne style */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#toggle-menu {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#toggle-menu:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.tile {
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
+}
+
+/* Efekt po kliknięciu kafelka */
+.tile:active {
+    background-color: #ff5722;
+    color: white;
+    transform: scale(0.95);
+}
+
+/* Panel boczny */
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s;
+}
+
+#sidebar.visible {
+    right: 0;
+}
+
+.sidebar-content {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+.sidebar-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-content ul li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4a90e2;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar-content ul li:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.sidebar-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar-content button:hover {
+    background-color: #e64a19;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+footer button:hover {
+    background-color: #0056b3;
+}
+
+#contact-info {
+    display: none;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+#contact-info.hidden {
+    display: none;
+}
+
+#contact-info.visible {
+    display: block;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
